@@ -1,0 +1,21 @@
+<mat-accordion class="example-headers-align" multi >
+  <mat-expansion-panel  *ngFor="let user of users; let i= index;" >
+    <mat-expansion-panel-header (click)="submitData(id)">
+      <mat-panel-title>
+      {{i+1}} .{{user.name}}
+      </mat-panel-title>
+      <mat-panel-description>
+        <span class="spacer"></span>
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+    <mat-list role="list">
+      <mat-list-item  role="listitem">Name: <span class="spacer" value="h" #id>h</span> {{user.name}}</mat-list-item>
+      <mat-list-item role="listitem">User Name: <span class="spacer"></span> {{user.username}}</mat-list-item>
+      <mat-list-item role="listitem">City: <span class="spacer"></span>{{user.address.city}}</mat-list-item>
+      <mat-list-item role="listitem">PinCode: <span class="spacer"></span> {{user.address.zipcode}}</mat-list-item>
+      <mat-list-item role="listitem">Company Name: <span class="spacer"></span>{{user.company.name}}</mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+  </mat-accordion>

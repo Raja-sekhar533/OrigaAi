@@ -1,0 +1,14 @@
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+.spacer{
+  flex: 1 1 auto;
+}
+mat-list-item{
+  font-size: 2rem;
+  font-weight: 500;
+}
+mat-expansion-panel{
+  margin: 1rem;
+}
