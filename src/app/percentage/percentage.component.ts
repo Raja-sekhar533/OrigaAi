@@ -8,21 +8,18 @@ import { Users } from '../interface';
 })
 export class PercentageComponent implements OnInit {
   numOfUsers;
-  selectedName = '';
-  selectedEmail: any;
-  selectedUsername = '';
   users: Users[] = [];
+  curretUserData: any;
   constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
-    this.selectedName = this.userService.selectedUserData();
-    this.selectedUsername = this.userService.selecteduser();
-    this.selectedEmail = this.userService.selectedMail();
     this.userService.getUsers().subscribe(response => {
       this.users = response;
       this.numOfUsers = this.users.length;
     });
-
+  }
+  getCurrentUser(){
+   return this.userService.getCurrentUser();
   }
 
 }

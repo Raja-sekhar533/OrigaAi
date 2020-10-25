@@ -17,9 +17,8 @@ export class DataTableComponent implements OnInit {
    });
   }
 
-  submitData(name, username, email){
-    this.userService.selectedUser(name);
-    this.userService.selectedUserName(username);
-    this.userService.selectedEmail(email);
+  submitData(user){
+    this.userService.setCurrentUser(user);
+
   }
 }

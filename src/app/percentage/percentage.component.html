@@ -1,18 +1,24 @@
 <div class="container">
-<div class="percentage">
-<mat-card class="example-card">
-
-  <mat-card-content>
-    {{numOfUsers/100 * 100}}%
-  </mat-card-content>
-</mat-card>
-</div>
-<div class="percentage">
+  <div class="percentage">
   <mat-card class="example-card">
-
     <mat-card-content>
-      <p>{{selectedName}}</p>
+      {{numOfUsers/100 * 100}}%
     </mat-card-content>
   </mat-card>
-</div>
-</div>
+  </div>
+  <div class="percentage">
+    <mat-card class="example-card">
+      <div class="user">
+        <div class="icon">
+          <mat-icon>face</mat-icon>
+        </div>
+        <div class="data">
+         <h4> NAME :  {{getCurrentUser().name}}</h4>
+         <h4>  USERNAME : {{getCurrentUser().username}}</h4>
+          <h4> EMAILID : {{getCurrentUser().email}}</h4>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+  </div>

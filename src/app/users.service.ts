@@ -9,31 +9,17 @@ const DATA_URL = 'https://jsonplaceholder.typicode.com/users';
   providedIn: 'root'
 })
 export class UsersService {
-  selectedname = '';
-  selectedemail: any;
-  username = '';
+  user: any;
+
   constructor(private http: HttpClient) { }
-  selectedUserData(){
-    return this.selectedname;
-  }
-  selectedMail(){
-    return this.selectedemail;
-  }
-  selecteduser(){
-    return this.username;
-  }
 
-  getUsers(){
-  return this.http.get<Users[]>(DATA_URL);
+  getUsers() {
+    return this.http.get<Users[]>(DATA_URL);
   }
-
-  selectedUser(name){
-    this.selectedname = name;
+  setCurrentUser(user) {
+    this.user = user;
   }
-  selectedUserName(username){
-    this.username = username;
-  }
-  selectedEmail(email){
-    this.selectedemail = email;
+  getCurrentUser() {
+   return this.user || '';
   }
 }
