@@ -11,13 +11,15 @@ import { Users } from '../interface';
 export class PiechartComponent implements OnInit {
   myChart ;
   users: any;
-  usersData : Users[] = [];
-  constructor(private userServise:UsersService) { }
+  usersData: Users[] = [];
+  lat: any;
+  lng: any;
+
+  constructor(private userServise: UsersService) { }
 
   ngOnInit(): void {
     this.userServise.getUsers().subscribe(response => {
       this.usersData = response;
-      console.log(this.usersData.length)
     });
 
 

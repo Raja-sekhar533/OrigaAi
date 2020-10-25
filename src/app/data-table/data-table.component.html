@@ -1,6 +1,6 @@
 <mat-accordion class="example-headers-align" multi >
   <mat-expansion-panel  *ngFor="let user of users; let i= index;" >
-    <mat-expansion-panel-header (click)="submitData(id)">
+    <mat-expansion-panel-header (click)="submitData(user.name, user.username, user.email)">
       <mat-panel-title>
       {{i+1}} .{{user.name}}
       </mat-panel-title>
